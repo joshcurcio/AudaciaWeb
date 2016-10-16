@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+<script src="controllers/homePageLoggedController.js"></script>
+<head>
+	<title>Audacia</title>
+</head>
+
+<style>
+body {font-family: "Lato", sans-serif;}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+ul.tab li {float: left;}
+
+
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+
+<body>
+  <input type="submit" onclick="logout()" value="logout"/>
+	<ul class="tab">
+		<li><a href="#" class="tablinks" onclick="openTab(event, 'Home')">Home</a></li>
+		<li><a href="#" class="tablinks" onclick="openTab(event, 'Promoted')">Promoted</a></li>
+		<li><a href="#" class="tablinks" onclick="openTab(event, 'Recents')">Recents</a></li>
+		<li><a href="#" class="tablinks" onclick="openTab(event, 'Profile')">Profile</a></li>
+		<li><a href="#" class="tablinks" onclick="logout()">Logout</a></li>
+	</ul>
+	<div id="Home" class="tabcontent">
+		<h2>Home</h2>
+		<p> This is the content of the home page..</p>
+		<style type="text/css">
+			#HomePictures
+			{
+				margin: 50px auto;
+				width: 600px;
+				height: 575px;
+				border: 2px solid black;
+			}
+			#HomePhoto
+			{
+
+				width: 598px;
+				height: 425px;
+				border: 1px solid red;
+			}
+			#Buttons
+			{
+				width: 598px;
+				height: 30px;
+				border: 1px solid blue;
+			}
+			#HomeDescription
+			{
+				margin-left: 10px;
+				width: 580px;
+				height: 74px;
+				border: 1px solid green;
+			}
+			#HomePicProfile
+			{
+				width: 598px;
+				height: 39px;
+				border: 1px solid purple;
+			}
+
+		</style>
+		<div id="HomePictures">
+			<div id="HomePicProfile">
+				<image src="" width="10">
+				</image>
+				<image src="media\Profile_Image.png" width="38" height="38">
+				</image>
+
+			</div>
+			<div id="HomePhoto">
+				<image src="media\Filming_Pic.jpg" width="598" height="425">
+				</image>
+			</div>
+			<div id="Buttons">
+				<image src="" width="10">
+				</image>
+				<image src="media\Heart_Icon.png" width="25" height="25">
+				</image>
+				<image src="" width="10" onclick="LikeButton ()">
+				</image>
+				<image src="media\Promoted_Icon.jpg" width="29" height="29">
+				</image>
+				<image src="" width="10" height="10" align="right">
+				</image>
+				<image src="media\Home_Options.png" width="29" height="29" align="right">
+				</image>
+			</div>
+			<div id="HomeDescription">
+			</div>
+		</div>
+
+	</div>
+	<div id="Promoted" class="tabcontent">
+		<h2>Promoted</h2>
+		<p>This is the content of promoted page.</p>
+	</div>
+	<div id="Recents" class="tabcontent">
+		<h2>Recents</h2>
+		<p>This is the content of Recents page.</p>
+	</div>
+	<div id="Profile" class="tabcontent">
+		<h2>Profile</h2>
+
+		<style type="text/css">
+#ProfilePage
+{
+
+    margin: 50px auto;
+    width: 635px;
+	height: 250px;
+
+
+border: 1px solid red;
+}
+
+#Subtab1
+{
+	display: inline-block;
+	margin-left: 50px auto;
+	width: 125px;
+	height: 20px;
+
+border: 1px solid black;
+}
+
+/* #Subtab2
+{
+	margin-left: 75px auto;
+	width: 75px;
+	height: 20px;
+
+border: 1px solid black;
+}*/
+
+
+#SubtabDescription
+{
+
+	margin: 100px auto;
+	width: 700px;
+	height: 700px;
+
+border: 1px solid black;
+}
+
+
+#LeftCol
+{
+
+    float: left;
+
+    width: 200px;
+    text-align: center;
+
+
+    margin-right: 20px;
+
+
+border: 1px solid brown;
+}
+
+#Photo
+{
+
+    width: 200px;
+    height: 200px;
+
+
+border: 1px solid green;
+}
+
+#PhotoOptions
+{
+    text-align: center;
+    width: 200px;
+
+
+border: 1px solid brown;
+}
+
+#Info
+{
+    width: 400px;
+    text-align: center;
+
+
+    float: right;
+
+
+border: 1px solid blue;
+}
+
+#Info strong
+{
+
+    display: inline-block;
+    width: 100px;
+
+
+border: 1px solid orange;
+}
+
+#Info span
+{
+
+    display: inline-block;
+    width: 50px;
+
+
+border: 1px solid purple;
+}
+
+
+
+		</style>
+		<div id="ProfilePage">
+			<div id="LeftCol">
+				<div id="Photo">
+					<image src="media\profile.png" width="200px" height="200px"></image>
+					</div>
+				<div id="ProfileOptions">
+					John Doe
+				</div>
+			</div>
+			<div id="Info">
+					<p id="Posts">
+						<strong>Posts</strong>
+						<span id="PostsNumber">89</span>
+					</p>
+					<p id="Mentors">
+						<strong>Mentors</strong>
+						<span id="MentorCount">4</span>
+					</p>
+					<p id="Followers">
+						<strong>Followers</strong>
+						<span id="FollowersNumber">459</span>
+					</p>
+					<p id="Following">
+						<strong>Following</strong>
+						<span id="FollowingNumber">1294</span>
+					</p>
+
+			</div>
+	<!-- Button and text needs to be deleted after implementing new attribute for the change in number -->
+			<input id="Button" type="button" value="Description" onclick="Foo ()"></input>
+			<input id="Description" type="text" size="62" align="bottom-right"></input>
+
+			<div style="clear:both"></div>
+			<div id="SubtabDescription">
+				<ul class="tab">
+					<li><a href="#" class="tablinks" onclick="openTab(event, 'Pictures')">Pictures</a></li>
+					<li><a href="#" class="tablinks" onclick="openTab(event, 'Posts')">Posts</a></li>
+					<li><a href="#" class="tablinks" onclick="openTab(event, 'MyPortfolio')">My Portfolio</a></li>
+					<li><a href="#" class="tablinks" onclick="openTab(event, 'Tagged')">Tagged</a></li>
+
+				</ul>
+				<div id="Pictures" class="tabcontent">
+					<h2>Pictures</h2>
+					<p> This is the Content of Pictures tab.</p>
+				</div>
+				<div id="Posts" class="tabcontent">
+					<p> This is the content of Posts tab.</p>
+				</div>
+				<div id="MyPortfolio" class="tabcontent" >
+					<p> This is the content of My Portfolio tab.</p>
+				</div>
+				<div id="Tagged" class="tabcontent">
+					<p> This is the content of My Portfolio tab.</p>
+				</div>
+			</div>
+		</div>
+		<div id="Logout" onclick="Logout">
+		</div>
+
+	</div>
+
+
+</body>
+</html>
