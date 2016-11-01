@@ -27,61 +27,55 @@ function writeUserData(userId, name, email) {
 }
 
 function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
 }
-
-function Foo() {
-    var X = document.getElementById("Description").value;
-    document.getElementById("PostsNumber").innerHTML = X;
-    writeUserData(uid, 'Josh Curcio', email)
+function LikeButton ()
+{
 
 }
+function Search_submit ()
+{
 
-function logout() {
-    firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-        isAuthenticated = false;
-        console.log("logged out");
-    }, function(error) {
-        // An error happened.
-    });
 }
+function Megan()
+{
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        // User is signed in.
-
-        if (isAuthenticated == false) {
-            isAuthenticated = true;
-            displayName = user.displayName;
-            email = user.email;
-            emailVerified = user.emailVerified;
-            photoURL = user.photoURL;
-            isAnonymous = user.isAnonymous;
-            uid = user.uid;
-            providerData = user.providerData;
-
-            console.log(uid);
-        }
-    } else {
-        if (isAuthenticated == true) {
-            isAuthenticated = false;
-            console.log("user not logged in");
-            window.location.href = "login.html";
-        }
-    }
+}
+function editProfile()
+{
+  window.location.href = "Edit_Profile.html"
+}
+jQuery(document).ready(function (e) {
+  function t(t) {
+      e(t).bind("click", function (t) {
+          t.preventDefault();
+          e(this).parent().fadeOut()
+      })
+  }
+  e(".dropdown-toggle").click(function () {
+      var t = e(this).parents(".button-dropdown").children(".dropdown-menu").is(":hidden");
+      e(".button-dropdown .dropdown-menu").hide();
+      e(".button-dropdown .dropdown-toggle").removeClass("active");
+      if (t) {
+          e(this).parents(".button-dropdown").children(".dropdown-menu").toggle().parents(".button-dropdown").children(".dropdown-toggle").addClass("active")
+      }
+  });
+  e(document).bind("click", function (t) {
+      var n = e(t.target);
+      if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-menu").hide();
+  });
+  e(document).bind("click", function (t) {
+      var n = e(t.target);
+      if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-toggle").removeClass("active");
+  })
 });
-
-function LikeButton() {
-
-}

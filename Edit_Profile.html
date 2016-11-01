@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body { font-family: "Lato", sans-serif;}
+      #Picture {
+        height: 200px;
+        width: 200px;
+        border: 1px solid blue;
+      }
+      #Photo {
+
+      }
+      #ChangePictureButton {
+
+      }
+      #ChangePicture_Border {
+        background-color: #f1f1f1;
+        margin: 10px;
+        margin-left:40px;
+        height: 20px;
+        width: 140px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      #RequiredInfo{
+        height: 235px;
+        width: 700px;
+        border: 1px solid yellow;
+        margin-left: 10px;
+      }
+      #Info {
+        float: right;
+        height: 233px;
+        width: 400px;
+        border: 1px solid green;
+      }
+      ul.tab {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				border: 1px solid #ccc;
+				background-color: #f1f1f1;
+			}
+			ul.tab li {float:left;}
+			ul.tab li a {
+				display: inline-block;
+				color: black;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				transition: 0.3s;
+				font-size: 17px;
+			}
+			ul.tab li a:hover {
+				background-color:;
+			}
+			ul.tab li a:focus, .active {
+				background-color:#ccc;
+			}
+			.tabcontent {
+				display: none;
+				padding: 6px;
+				border: 1px solid #ccc;
+				border-top: none;
+			}
+      #FirstName {
+        text-align: right;
+        margin-top: 10px;
+      }
+      #LastName {
+        text-align: right;
+        margin-top:10px;
+        margin-left: 10px;
+      }
+      #Description {
+        text-align: right;
+
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #Email {
+        text-align: right;
+
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #PhoneNumber {
+        text-align: right;
+
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #Gender {
+        text-align: right;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #Info2 {
+        float: left;
+      }
+      #SecurityInfo {
+        height: 400px;
+        width: 750px;
+        border: 1px solid black;
+      }
+      #SecurityInfoInput {
+        float: left;
+      }
+      #UserName {
+        text-align: right;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #OldPassword {
+        text-align: right;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      #NewPassword {
+      text-align: right;
+      margin-left: 10px;
+      margin-top: 10px;
+      }
+      #ConfirmPassword
+      {
+        text-align: right;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="tab">
+      <li><a href="#" class="tablinks" onclick="openTab(event, 'EditProfile')">Edit Profile</a></li>
+      <li><a href="#" class="tablinks" onclick="opentab(event, 'Security')">Security</a></li>
+    </ul>
+    <div id="EditProfile" class="tabcontent">
+      <div id="RequiredInfo">
+        <div id="Info">
+          <div id="Info2">
+            <div id="FirstName">
+              Firstname <input type="text" value="John" style="margin-left: 19px;">
+            </input>
+            </div>
+            <div id="LastName">
+              Lastname <input type="text" value="Doe" style="margin-left: 20px;">
+            </input>
+            </div>
+            <div id="Description">
+              Description
+              <input id="DescriptionInput" type="text" value="I am John" maxlength="500" style="margin-left: 10px;">
+              </input>
+            </div>
+            <div id="Email">
+              Email <input type="email" value="John.Doe@gmail.com" style="margin-left: 20px;">
+            </input>
+            </div>
+            <div id="PhoneNumber">
+              Phone Number <input type="te" value="9854853452" style="margin-left: 20px;">
+            </input>
+            </div>
+            <div id="Gender">
+              Gender <input type="text" value="Both" style="margin-left: 20px;">
+            </input>
+            </div>
+          </div>
+        </div>
+        <div id="Picture">
+          <img id="Photo" src="C:\Users\mrath\Desktop\Audacia\profile.png" height="200px" width="200px">
+            </img>
+        </div>
+        <div id="ChangePicture_Border">
+            <div id="ChangePictureButton" value="Change Picture">
+              Change Picture ▼
+          </div>
+          </div>
+        </div>
+      <div id="">
+      </div>
+    </div>
+    <div id="Security" class="">
+      <div id="SecurityInfo">
+        <div id="SecurityInfoInput">
+          <div id="UserName">
+            Username <input type="text">
+            </input>
+          </div>
+          <div id="Password">
+            Old Password <input type="text">
+            </input>
+            New Password  <input type="text">
+            </input>
+            Confirm Password  <input type="text">
+            </input>
+          <div id="Update">
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="Done" onclick="HomePage ()" >
+    </input>
+  </body>
+</html>

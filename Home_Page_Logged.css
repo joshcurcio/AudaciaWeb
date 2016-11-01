@@ -1,0 +1,199 @@
+body {font-family: "Lato", sans-serif;}
+ul.tab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+ul.tab li {float: left;}
+ul.tab li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+ul.tab li a:hover {
+  background-color: #ddd;
+}
+ul.tab li a:focus, .active {
+  background-color: #ccc;
+}
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+#HomePictures
+  {
+    margin: 50px auto;
+    width: 600px;
+    height: 575px;
+    border: 2px solid black;
+  }
+#HomePhoto
+  {
+    width: 598px;
+    height: 425px;
+    border: 1px solid red;
+  }
+#Buttons
+  {
+  width: 598px;
+  height: 30px;
+  border: 1px solid blue;
+  }
+#HomeDescription
+  {
+  margin-left: 10px;
+  width: 580px;
+  height: 74px;
+  border: 1px solid green;
+  }
+#HomePicProfile
+  {
+  width: 598px;
+  height: 39px;
+  border: 1px solid purple;
+  }
+#ProfilePage
+  {
+  margin: 50px auto;
+  width: 635px;
+  height: 250px;
+  border: 1px solid red;
+  }
+#Subtab1
+  {
+  display: inline-block;
+  margin-left: 50px auto;
+  width: 125px;
+  height: 20px;
+  border: 1px solid black;
+  }
+/* #Subtab2
+  {
+  margin-left: 75px auto;
+  width: 75px;
+  height: 20px;
+  border: 1px solid black;
+  }
+  */
+#SubtabDescription
+  {
+  margin: 100px auto;
+  width: 700px;
+  height: 700px;
+  border: 1px solid black;
+  }
+#LeftCol
+  {
+  float: left;
+  width: 200px;
+  text-align: center;
+  margin-right: 20px;
+  border: 1px solid brown;
+  }
+#Photo
+  {
+  width: 200px;
+  height: 200px;
+  border: 1px solid green;
+  }
+#PhotoOptions
+  {
+  text-align: center;
+  width: 200px;
+  border: 1px solid brown;
+  }
+#Info
+  {
+  width: 400px;
+  text-align: center;
+  float: right;
+  border: 1px solid blue;
+  }
+#Info strong
+  {
+  display: inline-block;
+  width: 100px;
+  border: 1px solid orange;
+  }
+#Info span
+  {
+  display: inline-block;
+  width: 50px;
+  border: 1px solid purple;
+  }
+#Description
+  {
+  height: 10px;
+  width: 50px;
+  border: 1px solid black;
+  }
+#Home_SubCategories
+  {
+    float: center;
+    height: 20px;
+    width: 620px;
+    border: 1px solid black;
+  }
+#First_Catergory
+  {
+    height: 20px;
+    width: 206px;
+    background-color: #66ffff;
+    display: inline-block;;
+  }
+#Second_Catergory
+  {
+    margin: 0 auto;
+    height: 20px;
+    width: 206px;
+    background-color: #ffff66;
+    display: inline-block;
+  }
+#Third_Catergory
+  {
+    height: 20px;
+    width: 206px;
+    background-color: #99ff66;
+    display: inline-block;
+  }
+.nav
+  {
+
+  }
+.nav li
+  {
+    display: inline-block;
+    list-style: none;
+  }
+.nav .button-dropdown
+  {
+    position: relative;
+  }
+.nav li a:hover, .nav li a.dropdown-toggle.active
+  {
+  color: #fff;
+  }
+.nav li .dropdown-menu.active {
+  display: block;
+}
+.nav li .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 3px;
+  text-align: left;
+}
+.nav li .dropdown-menu a {
+  width: 150px;
+}
